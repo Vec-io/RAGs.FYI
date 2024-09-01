@@ -4,10 +4,6 @@
 
 [RAGs.fyi](https://RAGs.fyi) is a RAG platform comparison website
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://RAGs.fyi/contributing) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## License
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
