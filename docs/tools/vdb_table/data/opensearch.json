@@ -4,7 +4,7 @@
     "docs": "https://opensearch.org/docs/latest/search-plugins/knn/index/",
     "github": "https://github.com/opensearch-project/OpenSearch",
     "website": "https://opensearch.org/platform/search/vector-database.html",
-    "vendor_discussion": "https://github.com/superlinked/VectorHub/discussions/77",
+    "vendor_discussion": "https://github.com/AI-Northstar-Tech/RAGs.fyi/discussions/77",
     "poc_github": "https://github.com/dtaivpp",
     "slug": "opensearch"
   },

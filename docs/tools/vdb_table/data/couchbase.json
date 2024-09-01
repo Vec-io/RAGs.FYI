@@ -4,7 +4,7 @@
     "docs": "https://docs.couchbase.com/cloud/vector-search/vector-search.html",
     "github": "https://github.com/couchbase",
     "website": "https://www.couchbase.com/products/vector-search/",
-    "vendor_discussion": "https://github.com/superlinked/VectorHub/discussions/378",
+    "vendor_discussion": "https://github.com/AI-Northstar-Tech/RAGs.fyi/discussions/378",
     "poc_github": "https://github.com/1tylermitchell",
     "slug": "couchbase"
   },

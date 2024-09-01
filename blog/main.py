@@ -24,7 +24,7 @@ headers = {
 
 def arg_parse():
     global args
-    parser = argparse.ArgumentParser(description="VectorHub Strapi Upload")
+    parser = argparse.ArgumentParser(description="RAGs.fyi Strapi Upload")
     parser.add_argument('--directories', help='Path to json which describes the directories to parse')
     args = parser.parse_args()
 

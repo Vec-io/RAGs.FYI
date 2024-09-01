@@ -1,9 +1,9 @@
 ---
 name: New Content
-about: Content proposal on VectorHub
+about: Content proposal on RAGs.fyi
 title: ''
 labels: new content
-assignees: ClaireSuperlinked
+assignees: ClaireAI-Northstar-Tech
 
 ---
 

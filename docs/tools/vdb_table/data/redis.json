@@ -4,7 +4,7 @@
     "docs": "https://redis.io/docs/get-started/vector-database/",
     "github": "https://github.com/RediSearch/RediSearch",
     "website": "https://redis.com/solutions/use-cases/vector-database/",
-    "vendor_discussion": "https://github.com/superlinked/VectorHub/discussions/81",
+    "vendor_discussion": "https://github.com/AI-Northstar-Tech/RAGs.fyi/discussions/81",
     "poc_github": "https://github.com/adrianoamaral",
     "slug": "redis"
   },

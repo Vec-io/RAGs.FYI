@@ -3,7 +3,7 @@ name: Update content
 about: Help us keep content up-to-date and free of typos.
 title: ''
 labels: ''
-assignees: AruneshSingh
+assignees: dhruv-anand-aintech
 
 ---
 

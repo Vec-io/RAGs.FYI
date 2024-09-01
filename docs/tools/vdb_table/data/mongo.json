@@ -4,7 +4,7 @@
     "docs": "https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-overview/",
     "github": "https://github.com/mongodb",
     "website": "https://www.mongodb.com/products/platform/atlas-vector-search",
-    "vendor_discussion": "https://github.com/superlinked/VectorHub/discussions/72",
+    "vendor_discussion": "https://github.com/AI-Northstar-Tech/RAGs.fyi/discussions/72",
     "poc_github": "https://github.com/dvsander",
     "slug": "mongo"
   },

@@ -4,7 +4,7 @@
     "docs": "https://cassandra.apache.org/doc/latest/cassandra/vector-search/overview.html",
     "github": "https://github.com/apache/cassandra",
     "website": "https://cassandra.apache.org/_/Apache-Cassandra-5.0-Moving-Toward-an-AI-Driven-Future.html",
-    "vendor_discussion": "https://github.com/superlinked/VectorHub/discussions/84",
+    "vendor_discussion": "https://github.com/AI-Northstar-Tech/RAGs.fyi/discussions/84",
     "poc_github": "https://github.com/jbellis",
     "slug": "apachecassandra"
   },

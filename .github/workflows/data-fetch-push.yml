@@ -36,10 +36,10 @@ jobs:
 
     - name: Commit and push if there are changes
       env:
-        GIT_AUTHOR_NAME: Arunesh Singh
-        GIT_AUTHOR_EMAIL: 43724007+AruneshSingh@users.noreply.github.com
-        GIT_COMMITTER_NAME: Arunesh Singh
-        GIT_COMMITTER_EMAIL: 43724007+AruneshSingh@users.noreply.github.com
+        GIT_AUTHOR_NAME: dhruv-anand-aintech
+        GIT_AUTHOR_EMAIL: dhruv@tryvector.io
+        GIT_COMMITTER_NAME: Dhruv Anand
+        GIT_COMMITTER_EMAIL: dhruv@tryvector.io
         GITHUB_TOKEN: ${{ secrets.DATA_PUSH_TOKEN }}
       run: |
         git add docs/tools/vdb_table/data/.

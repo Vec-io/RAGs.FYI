@@ -1,7 +1,7 @@
 [
     {
         "type": "folder",
-        "name": "VectorHub",
+        "name": "RAGs.fyi",
         "path": "docs",
         "has_blogs": true,
         "children": [

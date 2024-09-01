@@ -1,14 +1,14 @@
 # Contributing Guidelines
 
-VectorHub is a learning hub that lives on its contributors. We are always looking for people to help others, especially as we grow. You can contribute in many ways, either by creating new content or by letting us know if content needs updating.
+RAGs.fyi is a learning hub that lives on its contributors. We are always looking for people to help others, especially as we grow. You can contribute in many ways, either by creating new content or by letting us know if content needs updating.
 
-VectorHub (VH)'s value is in its positioning as a neutral platform for high-quality educational content. Because of this, we do not actively discuss or promote Superlinked on VH. 
+RAGs.fyi (VH)'s value is in its positioning as a neutral platform for high-quality educational content. Because of this, we do not actively discuss or promote AI-Northstar-Tech on VH. 
 
 We have seen significant growth since the launch in late November 2023, now hitting over 30k views (Mar ‘24) monthly across VH assets. The audience is technical, >50% ML Engineer/Data Scientist, 7% CTO level, from startups to major infrastructure / ML platform executives.
 
-## How is VectorHub organised
+## How is RAGs.fyi organised
 
-VectorHub's content is organized into three major areas:
+RAGs.fyi's content is organized into three major areas:
 
 1. Building Blocks: These cover the broad field of vector creation and retrieval. We take a step by step approach to creating a vector stack: Data Sources -> Vector Compute -> Vector Search & Management.
 
@@ -21,11 +21,11 @@ VectorHub's content is organized into three major areas:
 [This loom](https://www.loom.com/share/dd7f74501fa74740906910d7fb41e02e?sid=6ff5c716-ad70-43a2-968c-7f900b6fb613) explains how to set up your contributing workflow.
 
 When you are ready to submit:
-1. Fork the VectorHub repo
+1. Fork the RAGs.fyi repo
 2. Push all commits to your fork in the appropriate section for your content
-3. Open a PR to merge content from their fork to the remote repo (superlinked/vectorhub)
+3. Open a PR to merge content from their fork to the remote repo (AI-Northstar-Tech/RAGs.fyi)
 
-Please read the [style guide](https://superlinked.com/vectorhub/contributing/style-guide) for guidance on how to format your content.
+Please read the [style guide](https://AI-Northstar-Tech.com/RAGs.fyi/contributing/style-guide) for guidance on how to format your content.
 
 However, some additional dos and don’ts for contributors are summarised below:
 
@@ -38,18 +38,18 @@ However, some additional dos and don’ts for contributors are summarised below:
 <br>
 ✅ <b> Share unique insights & research</b> - the best content on VH showcases new ways of doing things to tackle known challenges in the industry, for example, improving retrieval quality
 <br>
-✅ <b> Use simple tools/libraries or mainstream tools to demonstrate your use case in code</b> - we appreciate that you may have preferred products when building in the real world. However, for VectorHub content, we ask that you focus on demoing how to build from first principles, using simple tools (sklearn, PyTorch, numpy and similar), no tools at all, or, if needed, mainstream libraries (i.e. llamaindex or langchain), and highlight that alternative options are available to maintain the platform's neutral integrity.
+✅ <b> Use simple tools/libraries or mainstream tools to demonstrate your use case in code</b> - we appreciate that you may have preferred products when building in the real world. However, for RAGs.fyi content, we ask that you focus on demoing how to build from first principles, using simple tools (sklearn, PyTorch, numpy and similar), no tools at all, or, if needed, mainstream libraries (i.e. llamaindex or langchain), and highlight that alternative options are available to maintain the platform's neutral integrity.
 <br>
 ✅ <b>Be realistic with submission timelines</b> - It’s better to plan for a longer timeline and deliver early than to keep pushing back. To effectively support your submission, we need time to plan the content pipeline and promotion.
 <br>
-✅ <b>Share step-by-step implementations with context</b> - For inspiration, Andrei Kaparthy’s tutorials  ([here](https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) & [here](https://www.youtube.com/watch?v=zduSFxRajkE)) on building out neural networks and GPTs from scratch are a great example of the content style that does well on VectorHub. For VectorHub however, keep it concise and focus on one specific pain point/goal per article as opposed to a complete solution
+✅ <b>Share step-by-step implementations with context</b> - For inspiration, Andrei Kaparthy’s tutorials  ([here](https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) & [here](https://www.youtube.com/watch?v=zduSFxRajkE)) on building out neural networks and GPTs from scratch are a great example of the content style that does well on RAGs.fyi. For RAGs.fyi however, keep it concise and focus on one specific pain point/goal per article as opposed to a complete solution
 <br>
 
 
 ## Don’ts
 ❌ <b>Repurpose your existing content verbatim </b>- you can rework and re-edit content you have published elsewhere to share on the platform. However, we ask you to include one additional unique insight and that it is different enough for SEO purposes for us not to be penalised
 <br>
-❌ <b>Create sales-focused content </b>- we cannot accept content that we consider salesy, which details setting up and working with one specific product or actively promotes a specific technology. See your VectorHub article more as a brand-building, soft-sell initiative.
+❌ <b>Create sales-focused content </b>- we cannot accept content that we consider salesy, which details setting up and working with one specific product or actively promotes a specific technology. See your RAGs.fyi article more as a brand-building, soft-sell initiative.
 
 ## Get involved
 
@@ -57,7 +57,7 @@ We constantly release bounties looking for content contributions. Keep an eye ou
 
 ### Other ways you can get involved
 
-[Report an error/bug/typo](https://github.com/superlinked/VectorHub/issues)
-[Create new or update existing content](https://github.com/superlinked/VectorHub)
+[Report an error/bug/typo](https://github.com/AI-Northstar-Tech/RAGs.fyi/issues)
+[Create new or update existing content](https://github.com/AI-Northstar-Tech/RAGs.fyi)
 
-Thank you for your suggestions! If you think there is anything to improve on VectorHub, feel free to contact us on arunesh\@superlinked.com, or check our [GitHub repository](https://github.com/superlinked/VectorHub).
+Thank you for your suggestions! If you think there is anything to improve on RAGs.fyi, feel free to contact us on dhruv@tryvector.io, or check our [GitHub repository](https://github.com/AI-Northstar-Tech/RAGs.fyi).

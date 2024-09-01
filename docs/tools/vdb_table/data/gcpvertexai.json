@@ -4,7 +4,7 @@
     "docs": "https://cloud.google.com/vertex-ai/docs/vector-search/overview",
     "github": "https://github.com/GoogleCloudPlatform",
     "website": "https://cloud.google.com/blog/products/ai-machine-learning/vertex-matching-engine-blazing-fast-and-massively-scalable-nearest-neighbor-search",
-    "vendor_discussion": "https://github.com/superlinked/VectorHub/discussions/83",
+    "vendor_discussion": "https://github.com/AI-Northstar-Tech/RAGs.fyi/discussions/83",
     "poc_github": "https://github.com/kazunori279",
     "slug": "gcpvertexai"
   },

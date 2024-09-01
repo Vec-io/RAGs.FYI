@@ -4,7 +4,7 @@
     "docs": "https://clickhouse.com/docs/knowledgebase/vector-search",
     "github": "https://github.com/ClickHouse/ClickHouse",
     "website": "https://clickhouse.com/",
-    "vendor_discussion": "https://github.com/superlinked/VectorHub/discussions/100",
+    "vendor_discussion": "https://github.com/AI-Northstar-Tech/RAGs.fyi/discussions/100",
     "poc_github": "https://github.com/cwurm",
     "slug": "clickhouse"
   },

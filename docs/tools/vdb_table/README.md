@@ -2,11 +2,11 @@
 
 ![](../../assets/tools/vdb_table/cover.gif)
 
-[Vector DB Comparison](https://vdbs.superlinked.com/) is a free and open source tool from VectorHub to compare vector databases. It is created to outline the feature sets of different VDB solutions. Each of the features outlined has been verified to varying degrees.
+[Vector DB Comparison](https://vdbs.AI-Northstar-Tech.com/) is a free and open source tool from RAGs.fyi to compare vector databases. It is created to outline the feature sets of different VDB solutions. Each of the features outlined has been verified to varying degrees.
 
-This is a community initiative spearheaded by [Dhruv Anand](https://www.linkedin.com/in/dhruv-anand-ainorthstartech/), Founder of AI Northstar Tech, to give visibility to the different VDB offerings. Following the initial launch of the benchmarking table, a group of collaborators (listed below) was formed to verify claims before publishing on VectorHub.
+This is a community initiative spearheaded by [Dhruv Anand](https://www.linkedin.com/in/dhruv-anand-ainorthstartech/), Founder of AI Northstar Tech, to give visibility to the different VDB offerings. Following the initial launch of the benchmarking table, a group of collaborators (listed below) was formed to verify claims before publishing on RAGs.fyi.
 
-[VectorHub](https://hub.superlinked.com/) is a community-driven learning platform for information retrieval hosted by [Superlinked](https://superlinked.com/). Superlinked is a vector compute solution in the ml stack alongside the different VDBs. 
+[RAGs.fyi](https://hub.AI-Northstar-Tech.com/) is a community-driven learning platform for information retrieval hosted by [AI-Northstar-Tech](https://AI-Northstar-Tech.com/). AI-Northstar-Tech is a vector compute solution in the ml stack alongside the different VDBs. 
 
 For this exercise, the collaborators have worked with points of contact from the VBDs to ensure neutrality and fairness to create an accurate tool for practitioners.
 
@@ -33,9 +33,9 @@ We use [pepy.tech](https://www.pepy.tech) for obtaining statistics for a Python 
 
 ## Contributing
 
-Thanks for your interest in contributing to [vdbs.superlinked.com](https://vdbs.superlinked.com) and keeping the data upto date. 
+Thanks for your interest in contributing to [vdbs.AI-Northstar-Tech.com](https://vdbs.AI-Northstar-Tech.com) and keeping the data upto date. 
 
-We use [discussions](https://github.com/superlinked/VectorHub/discussions/categories/vdb-comparison) as our way to have conversations about each vendor. Please find the relevant discussion and add to the conversation.
+We use [discussions](https://github.com/AI-Northstar-Tech/RAGs.fyi/discussions/categories/vdb-comparison) as our way to have conversations about each vendor. Please find the relevant discussion and add to the conversation.
 
 Kindly review the following sections before you submit your issue or initial pull request, and use the approriate issues/PR template. In addition, check for existing open issues and pull requests to ensure that someone else has not already corrected the information.
 
@@ -45,7 +45,7 @@ If you need any help, feel free to tag [@AruneshSingh](https://github.com/Arunes
 
 - **Frontend:** The frontend is created in React, using ag-grid for the tables and Material UI for the interface components. It's hosted and deployed using Vercel.
 - B**ackend:** This github serves as the data for the table. Any updates to the JSON files are validated using github actions and pushed to a Google storage bucket, from where the frontend fetches the data.
-- **Discussions:** All the vendors have a dedicated discussion [here](https://github.com/superlinked/VectorHub/discussions/categories/vdb-comparison). Please ensure to go through the discussions before raising an issue/PR.
+- **Discussions:** All the vendors have a dedicated discussion [here](https://github.com/AI-Northstar-Tech/RAGs.fyi/discussions/categories/vdb-comparison). Please ensure to go through the discussions before raising an issue/PR.
 
 ### Structure
 

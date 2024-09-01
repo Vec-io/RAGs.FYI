@@ -2,7 +2,7 @@
 
 ## Adding comments
 
-If you want to add comments to your document that you don't want rendered to the VectorHub frontend, use the following format in your markdown files. Make sure to create blank lines before and after your comment for the best results.
+If you want to add comments to your document that you don't want rendered to the RAGs.fyi frontend, use the following format in your markdown files. Make sure to create blank lines before and after your comment for the best results.
 
 
 ```markdown

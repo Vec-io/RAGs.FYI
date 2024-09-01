@@ -1,7 +1,7 @@
 import os
 import enum
 
-GIT_REPO = 'https://github.com/superlinked/VectorHub'
+GIT_REPO = 'https://github.com/AI-Northstar-Tech/RAGs.fyi'
 
 class ItemType(enum.Enum):
     FOLDER = "folder"
