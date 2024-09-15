@@ -1,5 +1,4 @@
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
-
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa] [![Netlify Status](https://api.netlify.com/api/v1/badges/ac6920ec-676f-4f0e-9bce-274b9e69106e/deploy-status)](https://app.netlify.com/sites/magical-crisp-e78c33/deploys)
 # RAGs.fyi
 
 [RAGs.fyi](https://RAGs.fyi) is a RAG platform comparison website
