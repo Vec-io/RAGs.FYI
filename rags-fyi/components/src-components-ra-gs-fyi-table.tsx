@@ -1,6 +1,26 @@
+/**
+ * The `RaGsFyiTable` component is a reusable table component that displays a list of vendors with various data points. It supports filtering, sorting, and column selection.
+ *
+ * The component uses the following state variables:
+ * - `vendors`: an array of `VendorData` objects representing the vendor data
+ * - `filters`: an array of `Filter` objects representing the current filters applied to the table
+ * - `sortColumn`: the column to sort the table by
+ * - `sortDirection`: the direction to sort the table (ascending or descending)
+ * - `selectedColumns`: an array of column keys representing the columns currently displayed in the table
+ * - `tempFilters`: a temporary array of `Filter` objects used to update the filters before applying them
+ *
+ * The component provides the following functionality:
+ * - Filtering the vendor data based on the current filters
+ * - Sorting the vendor data based on the current sort column and direction
+ * - Allowing the user to select which columns to display in the table
+ * - Providing a filter popover for each column to allow the user to apply filters
+ * - Displaying a message when there are no vendors matching the current filters
+ *
+ * The component uses various UI components from the `@/components/ui` module, such as `Table`, `Button`, `Popover`, and `Select`.
+ */
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal } from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -12,6 +32,7 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "
 
 function MultiSelect({ options, selected, onChange, className }) {
   const [open, setOpen] = useState(false)
+  const [tempSelected, setTempSelected] = useState(selected)
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -35,18 +56,17 @@ function MultiSelect({ options, selected, onChange, className }) {
               <CommandItem
                 key={option.value}
                 onSelect={() => {
-                  onChange(
-                    selected.includes(option.value)
-                      ? selected.filter((item) => item !== option.value)
-                      : [...selected, option.value]
+                  setTempSelected(
+                    tempSelected.includes(option.value)
+                      ? tempSelected.filter((item) => item !== option.value)
+                      : [...tempSelected, option.value]
                   )
-                  setOpen(true)
                 }}
               >
                 <Check
                   className={cn(
                     "mr-2 h-4 w-4",
-                    selected.includes(option.value) ? "opacity-100" : "opacity-0"
+                    tempSelected.includes(option.value) ? "opacity-100" : "opacity-0"
                   )}
                 />
                 {option.label}
@@ -54,11 +74,21 @@ function MultiSelect({ options, selected, onChange, className }) {
             ))}
           </CommandGroup>
         </Command>
+        <div className="p-2">
+          <Button
+            onClick={() => {
+              onChange(tempSelected)
+              setOpen(false)
+            }}
+            className="w-full"
+          >
+            Apply
+          </Button>
+        </div>
       </PopoverContent>
     </Popover>
   )
 }
-
 type VendorData = {
   name: string
   usp: string
@@ -93,9 +123,11 @@ export function RaGsFyiTable() {
   const [sortColumn, setSortColumn] = useState('name')
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc')
   const [selectedColumns, setSelectedColumns] = useState<string[]>(columns.map(col => col.key))
+  const [tempFilters, setTempFilters] = useState<Filter[]>([])
+
 
   const filteredVendors = useMemo(() => {
-    return vendors.filter(vendor => 
+    return vendors.filter(vendor =>
       filters.every(filter => {
         const value = vendor[filter.column]
         if (value === undefined) return true
@@ -135,7 +167,7 @@ export function RaGsFyiTable() {
   }
 
   const handleFilterChange = (column: string, option: FilterOption, value: string) => {
-    setFilters(prev => {
+    setTempFilters(prev => {
       const existingFilterIndex = prev.findIndex(filter => filter.column === column)
       if (existingFilterIndex !== -1) {
         const newFilters = [...prev]
@@ -167,12 +199,13 @@ export function RaGsFyiTable() {
             <TableRow>
               <TableHead className="w-[50px] font-bold sticky left-0 z-20 bg-gray-100">S.No</TableHead>
               {columns.filter(column => selectedColumns.includes(column.key)).map(column => (
-                <TableHead 
-                  key={column.key} 
+                <TableHead
+                  key={column.key}
                   className="cursor-pointer bg-gray-100 font-bold"
+                  onClick={() => handleSort(column.key)}
                 >
-                  <div className="flex items-center justify-between">
-                    <span onClick={() => handleSort(column.key)} className="flex items-center">
+                  <div className="flex items-center justify-between w-full h-full">
+                    <span className="flex items-center">
                       {column.label}
                       {sortColumn === column.key && (
                         <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -180,7 +213,7 @@ export function RaGsFyiTable() {
                     </span>
                     <Popover>
                       <PopoverTrigger asChild>
-                        <Button variant="ghost" className="h-8 w-8 p-0">
+                        <Button variant="ghost" className="h-8 w-8 p-0" onClick={(e) => e.stopPropagation()}>
                           <Filter className="h-4 w-4" />
                           <span className="sr-only">Filter {column.label}</span>
                         </Button>
@@ -189,8 +222,8 @@ export function RaGsFyiTable() {
                         <div className="space-y-4">
                           <h4 className="font-medium leading-none">Filter {column.label}</h4>
                           <Select
-                            onValueChange={(value) => 
-                              handleFilterChange(column.key, value as FilterOption, 
+                            onValueChange={(value) =>
+                              handleFilterChange(column.key, value as FilterOption,
                                 filters.find(f => f.column === column.key)?.value || ''
                               )
                             }
@@ -210,8 +243,8 @@ export function RaGsFyiTable() {
                             placeholder={`Enter filter value...`}
                             value={filters.find(f => f.column === column.key)?.value || ''}
                             onChange={(e) => handleFilterChange(
-                              column.key, 
-                              filters.find(f => f.column === column.key)?.option || 'equals', 
+                              column.key,
+                              filters.find(f => f.column === column.key)?.option || 'equals',
                               e.target.value
                             )}
                           />
