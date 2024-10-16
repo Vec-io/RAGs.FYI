@@ -121,7 +121,7 @@ function Header() {
   return (
     <header className="bg-blue-600 text-white py-4">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">RAGs.fyi Comparison</h1>
+        <h1 className="text-2xl font-bold">RAGs.FYI Comparison</h1>
         <nav>
           <ul className="flex space-x-4">
             <li><a href="#" className="hover:underline">Home</a></li>
@@ -138,7 +138,7 @@ function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-6 mt-8">
       <div className="container mx-auto text-center">
-        <p>© 2023 RAGs.fyi. All rights reserved.</p>
+        <p>© 2023 RAGs.FYI. All rights reserved.</p>
         <div className="mt-4">
           <a href="#" className="hover:underline mx-2">Privacy Policy</a>
           <a href="#" className="hover:underline mx-2">Terms of Service</a>
