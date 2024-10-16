@@ -117,6 +117,38 @@ const columns = [
   { key: 'pricing', label: 'Pricing' }
 ]
 
+function Header() {
+  return (
+    <header className="bg-blue-600 text-white py-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <h1 className="text-2xl font-bold">RAGs.fyi Comparison</h1>
+        <nav>
+          <ul className="flex space-x-4">
+            <li><a href="#" className="hover:underline">Home</a></li>
+            <li><a href="#" className="hover:underline">About</a></li>
+            <li><a href="#" className="hover:underline">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className="bg-gray-800 text-white py-6 mt-8">
+      <div className="container mx-auto text-center">
+        <p>© 2023 RAGs.fyi. All rights reserved.</p>
+        <div className="mt-4">
+          <a href="#" className="hover:underline mx-2">Privacy Policy</a>
+          <a href="#" className="hover:underline mx-2">Terms of Service</a>
+          <a href="#" className="hover:underline mx-2">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
 export function RaGsFyiTable() {
   const [vendors, setVendors] = useState<VendorData[]>(initialVendors)
   const [filters, setFilters] = useState<Filter[]>([])
@@ -184,102 +216,109 @@ export function RaGsFyiTable() {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="mb-4 flex justify-end">
-        <MultiSelect
-          options={columns.map(col => ({ value: col.key, label: col.label }))}
-          selected={selectedColumns}
-          onChange={setSelectedColumns}
-          className="w-[200px]"
-        />
-      </div>
-      <div className="overflow-x-auto border rounded-lg shadow">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[50px] font-bold sticky left-0 z-20 bg-gray-100">S.No</TableHead>
-              {columns.filter(column => selectedColumns.includes(column.key)).map(column => (
-                <TableHead
-                  key={column.key}
-                  className="cursor-pointer bg-gray-100 font-bold group"
-                  onClick={() => handleSort(column.key)}
-                >
-                  <div className="flex items-center justify-between w-full h-full">
-                    <span className="flex items-center">
-                      {column.label}
-                      {sortColumn === column.key ? (
-                        sortDirection === 'asc' ? (
-                          <ArrowUp className="ml-2 h-4 w-4" />
-                        ) : (
-                          <ArrowDown className="ml-2 h-4 w-4" />
-                        )
-                      ) : (
-                        <ArrowUpDown className="ml-2 h-4 w-4 opacity-0 group-hover:opacity-50" />
-                      )}
-                    </span>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="ghost" className="h-8 w-8 p-0" onClick={(e) => e.stopPropagation()}>
-                          <Filter className="h-4 w-4" />
-                          <span className="sr-only">Filter {column.label}</span>
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-80">
-                        <div className="space-y-4">
-                          <h4 className="font-medium leading-none">Filter {column.label}</h4>
-                          <Select
-                            onValueChange={(value) =>
-                              handleFilterChange(column.key, value as FilterOption,
-                                filters.find(f => f.column === column.key)?.value || ''
-                              )
-                            }
-                          >
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select filter option" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              {getFilterOptions().map(option => (
-                                <SelectItem key={option} value={option}>
-                                  {option.replace('-', ' ')}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                          <Input
-                            placeholder={`Enter filter value...`}
-                            value={filters.find(f => f.column === column.key)?.value || ''}
-                            onChange={(e) => handleFilterChange(
-                              column.key,
-                              filters.find(f => f.column === column.key)?.option || 'equals',
-                              e.target.value
-                            )}
-                          />
-                        </div>
-                      </PopoverContent>
-                    </Popover>
-                  </div>
-                </TableHead>
-              ))}
-            </TableRow>          </TableHeader>
-          <TableBody>
-            {sortedVendors.map((vendor, index) => (
-              <TableRow key={vendor.name} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                <TableCell className="sticky left-0 z-10 bg-inherit">{index + 1}</TableCell>
-                {columns.filter(column => selectedColumns.includes(column.key)).map(column => (
-                  <TableCell key={column.key}>
-                    {vendor[column.key as keyof typeof vendor] || ''}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </div>
-      {sortedVendors.length === 0 && (
-        <div className="text-center mt-8">
-          <p className="text-xl font-semibold">No vendors found matching your search criteria.</p>
+    <div>
+      <Header />
+      <div className="container mx-auto p-4">
+        <h2 className="text-3xl font-bold mb-6 text-center">Compare RAG Vendors</h2>
+        <p className="text-lg mb-8 text-center">Find the best Retrieval-Augmented Generation solution for your needs.</p>
+
+        <div className="mb-4 flex justify-end">
+          <MultiSelect
+            options={columns.map(col => ({ value: col.key, label: col.label }))}
+            selected={selectedColumns}
+            onChange={setSelectedColumns}
+            className="w-[200px]"
+          />
         </div>
-      )}
+        <div className="overflow-x-auto border rounded-lg shadow">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-[50px] font-bold sticky left-0 z-20 bg-gray-100">S.No</TableHead>
+                {columns.filter(column => selectedColumns.includes(column.key)).map(column => (
+                  <TableHead
+                    key={column.key}
+                    className="cursor-pointer bg-gray-100 font-bold group"
+                    onClick={() => handleSort(column.key)}
+                  >
+                    <div className="flex items-center justify-between w-full h-full">
+                      <span className="flex items-center">
+                        {column.label}
+                        {sortColumn === column.key ? (
+                          sortDirection === 'asc' ? (
+                            <ArrowUp className="ml-2 h-4 w-4" />
+                          ) : (
+                            <ArrowDown className="ml-2 h-4 w-4" />
+                          )
+                        ) : (
+                          <ArrowUpDown className="ml-2 h-4 w-4 opacity-0 group-hover:opacity-50" />
+                        )}
+                      </span>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button variant="ghost" className="h-8 w-8 p-0" onClick={(e) => e.stopPropagation()}>
+                            <Filter className="h-4 w-4" />
+                            <span className="sr-only">Filter {column.label}</span>
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-80">
+                          <div className="space-y-4">
+                            <h4 className="font-medium leading-none">Filter {column.label}</h4>
+                            <Select
+                              onValueChange={(value) =>
+                                handleFilterChange(column.key, value as FilterOption,
+                                  filters.find(f => f.column === column.key)?.value || ''
+                                )
+                              }
+                            >
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select filter option" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {getFilterOptions().map(option => (
+                                  <SelectItem key={option} value={option}>
+                                    {option.replace('-', ' ')}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                            <Input
+                              placeholder={`Enter filter value...`}
+                              value={filters.find(f => f.column === column.key)?.value || ''}
+                              onChange={(e) => handleFilterChange(
+                                column.key,
+                                filters.find(f => f.column === column.key)?.option || 'equals',
+                                e.target.value
+                              )}
+                            />
+                          </div>
+                        </PopoverContent>
+                      </Popover>
+                    </div>
+                  </TableHead>
+                ))}
+              </TableRow>          </TableHeader>
+            <TableBody>
+              {sortedVendors.map((vendor, index) => (
+                <TableRow key={vendor.name} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <TableCell className="sticky left-0 z-10 bg-inherit">{index + 1}</TableCell>
+                  {columns.filter(column => selectedColumns.includes(column.key)).map(column => (
+                    <TableCell key={column.key}>
+                      {vendor[column.key as keyof typeof vendor] || ''}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+        {sortedVendors.length === 0 && (
+          <div className="text-center mt-8">
+            <p className="text-xl font-semibold">No vendors found matching your search criteria.</p>
+          </div>
+        )}
+        <Footer />
+      </div>
     </div>
-  )
+  );
 }
