@@ -118,3 +118,9 @@ export {
   TableCell,
   TableCaption,
 }
+
+const vendorSerialMap = {
+  "Vectara": 1,
+  "LlamaCloud": 2,
+  // Add more vendors as needed
+};

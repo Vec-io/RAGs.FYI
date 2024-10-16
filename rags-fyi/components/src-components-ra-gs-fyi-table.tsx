@@ -20,13 +20,13 @@
  */
 'use client'
 
-import { useState, useEffect, useMemo, AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal } from 'react'
+import { useState, useMemo } from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Check, ChevronsUpDown, Filter, ArrowUpDown } from 'lucide-react'
+import { Check, ChevronsUpDown, Filter, ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command"
 
@@ -201,14 +201,20 @@ export function RaGsFyiTable() {
               {columns.filter(column => selectedColumns.includes(column.key)).map(column => (
                 <TableHead
                   key={column.key}
-                  className="cursor-pointer bg-gray-100 font-bold"
+                  className="cursor-pointer bg-gray-100 font-bold group"
                   onClick={() => handleSort(column.key)}
                 >
                   <div className="flex items-center justify-between w-full h-full">
                     <span className="flex items-center">
                       {column.label}
-                      {sortColumn === column.key && (
-                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                      {sortColumn === column.key ? (
+                        sortDirection === 'asc' ? (
+                          <ArrowUp className="ml-2 h-4 w-4" />
+                        ) : (
+                          <ArrowDown className="ml-2 h-4 w-4" />
+                        )
+                      ) : (
+                        <ArrowUpDown className="ml-2 h-4 w-4 opacity-0 group-hover:opacity-50" />
                       )}
                     </span>
                     <Popover>
@@ -254,15 +260,14 @@ export function RaGsFyiTable() {
                   </div>
                 </TableHead>
               ))}
-            </TableRow>
-          </TableHeader>
+            </TableRow>          </TableHeader>
           <TableBody>
             {sortedVendors.map((vendor, index) => (
-              <TableRow key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+              <TableRow key={vendor.name} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                 <TableCell className="sticky left-0 z-10 bg-inherit">{index + 1}</TableCell>
                 {columns.filter(column => selectedColumns.includes(column.key)).map(column => (
                   <TableCell key={column.key}>
-                    {vendor[column.key] || ''}
+                    {vendor[column.key as keyof typeof vendor] || ''}
                   </TableCell>
                 ))}
               </TableRow>
